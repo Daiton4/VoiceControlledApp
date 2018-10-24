@@ -1,0 +1,32 @@
+<Page class="page"
+    navigatingTo="onNavigatingTo" 
+      navigatedTo="onNavigatedTo"
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+    
+    <ActionBar class="action-bar">
+        <Label class="action-bar-title" text="Home"></Label>
+    </ActionBar>
+
+    <GridLayout>
+      <StackLayout>
+        
+        <Button id="commButton" text="Tap Me!" tap="onTap" class="btn btn-primary btn-active" />
+        <Button text="Stop Tap Me!" tap="onStopTap" class="btn btn-primary btn-active" />
+        
+        <ListView items="{{ currentFiles }}"
+          itemTap="onItemTap"
+          loaded="{{ onListViewLoaded }}"
+          separatorColor="orangered" rowHeight="50"
+          class="list-group" id="listView" row="2">
+          
+          <ListView.itemTemplate>
+            <StackLayout class="list-group-item">
+              <Label text="{{ name || 'err' }}" textWrap="true" class="title" />
+            </StackLayout>
+          </ListView.itemTemplate>
+          
+        </ListView>
+        
+      </StackLayout>
+    </GridLayout>
+</Page>

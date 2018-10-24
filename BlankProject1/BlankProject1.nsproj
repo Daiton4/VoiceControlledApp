@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <FusionRootDir Condition="'$(FusionRootDir)'==''">$([System.Environment]::GetEnvironmentVariable('FusionRootDir'))</FusionRootDir>
+    <NSTargetDir>$(FusionRootDir)\BuildSystem\</NSTargetDir>
+    <ProjectGuid>116bc230-9747-4b45-b674-d38406083d9c</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(NSTargetDir)NativeScript.props" />
+  <Import Project="$(NSTargetDir)NativeScript.targets" />
+  <PropertyGroup>
+    <NSExcludeFolders>**\.vs\**;**\bin\**;**\hooks\**;**\platforms\**;**\node_modules\**;**\.cloud\**</NSExcludeFolders>
+    <NSExcludeFiles>**\.gitignore;**\.gitattributes;**\*.sln;**\*.nsproj;**\*.nsproj.user</NSExcludeFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="**\*.ts" Exclude="$(NSExcludeFolders)" />
+    <Content Include="**\*" Exclude="@(TypeScriptCompile);$(NSExcludeFolders);$(NSExcludeFiles)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4a0dddb5-7a95-4fbf-97cc-616d07737a77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="app\home\home-page.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ProjectExtensions>
+    <ProjectCapabilities>
+      <NativeScriptProject />
+      <ProjectConfigurationsDeclaredAsItems />
+    </ProjectCapabilities>
+  </ProjectExtensions>
+</Project>

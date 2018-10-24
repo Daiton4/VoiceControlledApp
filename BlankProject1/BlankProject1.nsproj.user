@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(DevicePlatform)|$(BuildType)|$(Platform)|$(BuildConfiguration)'=='Debug|Android|Local|Android Local|Debug'">
+    <DebuggerFlavor>NativeScriptDevToolsDebugger</DebuggerFlavor>
+    <DeviceID>62210917GH1269C00XA</DeviceID>
+  </PropertyGroup>
+</Project>
